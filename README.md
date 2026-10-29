@@ -117,6 +117,8 @@ The suite creates its own accounts and fixtures, simulates Supabase JWTs, and cl
 - [`docs/architecture.md`](docs/architecture.md) — modules, request flows, structure, UI approach.
 - [`docs/components.md`](docs/components.md) — component reuse rules, primitive catalog, and file
   size budget.
+- [`docs/deployment.md`](docs/deployment.md) — Vercel environment variables and automatic Supabase
+  migrations through GitHub Actions.
 - [`docs/system-design.md`](docs/system-design.md) — schema, indexes, RPCs, RLS policies, grants,
   calculations, reports, threat model, and test plan.
 
