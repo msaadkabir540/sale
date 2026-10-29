@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  --color-ocean-50: #f0f9fb;
+  --color-ocean-100: #dbf0f4;
+  --color-ocean-200: #bae3ea;
+  --color-ocean-300: #86cedb;
+  --color-ocean-400: #4bb0c3;
+  --color-ocean-500: #2b93a8;
+  --color-ocean-600: #22768c;
+  --color-ocean-700: #1e6173;
+  --color-ocean-800: #1d505f;
+  --color-ocean-900: #1b4350;
+  --color-ocean-950: #0b2a34;
+
+  --color-coral-50: #fff4f1;
+  --color-coral-100: #ffe4dd;
+  --color-coral-200: #ffc9bb;
+  --color-coral-300: #ffa48d;
+  --color-coral-400: #fb8a72;
+  --color-coral-500: #f4694d;
+  --color-coral-600: #dd4b2d;
+  --color-coral-700: #b93a21;
+
+  --color-sand-50: #faf8f3;
+  --color-sand-100: #f3efe5;
+  --color-sand-200: #e7dfcf;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-sand-50 text-slate-900 antialiased;
+  }
+
+  ::selection {
+    @apply bg-ocean-200 text-ocean-950;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)];
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-slate-700;
+  }
+
+  .hint {
+    @apply mt-1 text-xs leading-5 text-slate-500;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-ocean-500 focus:ring-2 focus:ring-ocean-500/20 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-500;
+  }
+
+  .input-sm {
+    @apply px-2.5 py-1.5 text-xs;
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply bg-ocean-700 text-white shadow-sm hover:bg-ocean-800 active:bg-ocean-900;
+  }
+
+  .btn-secondary {
+    @apply border border-slate-300 bg-white text-slate-700 shadow-sm hover:bg-slate-50 active:bg-slate-100;
+  }
+
+  .btn-coral {
+    @apply bg-coral-600 text-white shadow-sm hover:bg-coral-700;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 text-white shadow-sm hover:bg-red-700;
+  }
+
+  .btn-ghost {
+    @apply text-slate-600 hover:bg-slate-100 hover:text-slate-900;
+  }
+
+  .btn-sm {
+    @apply min-h-0 px-3 py-1.5 text-xs;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+
+  .badge-owner {
+    @apply bg-coral-100 text-coral-700;
+  }
+
+  .badge-admin {
+    @apply bg-ocean-100 text-ocean-800;
+  }
+
+  .badge-salesman {
+    @apply bg-slate-100 text-slate-700;
+  }
+
+  .badge-active {
+    @apply bg-emerald-50 text-emerald-700;
+  }
+
+  .badge-inactive {
+    @apply bg-slate-100 text-slate-500;
+  }
+
+  .alert {
+    @apply flex items-start gap-3 rounded-xl border px-4 py-3 text-sm leading-6;
+  }
+
+  .alert-error {
+    @apply border-red-200 bg-red-50 text-red-800;
+  }
+
+  .alert-success {
+    @apply border-emerald-200 bg-emerald-50 text-emerald-800;
+  }
+
+  .alert-info {
+    @apply border-ocean-200 bg-ocean-50 text-ocean-800;
+  }
+
+  .alert-warning {
+    @apply border-amber-200 bg-amber-50 text-amber-800;
+  }
+
+  .data-table {
+    @apply w-full min-w-full border-collapse text-left text-sm;
+  }
+
+  .data-table thead th {
+    @apply border-b border-slate-200 bg-slate-50/80 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500;
+  }
+
+  .data-table tbody td {
+    @apply border-b border-slate-100 px-4 py-3 align-middle text-slate-700;
+  }
+
+  .data-table tbody tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .data-table tbody tr:hover {
+    @apply bg-slate-50/60;
+  }
+
+  .data-table tfoot td {
+    @apply px-4 py-3;
+  }
+
+  .table-scroll {
+    @apply overflow-x-auto;
+  }
+
+  .divider {
+    @apply border-t border-slate-200;
+  }
+}
