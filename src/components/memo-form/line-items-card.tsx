@@ -57,7 +57,7 @@ export function LineItemsCard({
         </Button>
       </div>
 
-      <div className="hidden shrink-0 bg-ocean-950 px-6 py-2.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-ocean-100 sm:grid sm:grid-cols-[2.5rem_minmax(0,1fr)_9rem_5rem_7rem_7rem_2.5rem] sm:items-center sm:gap-3">
+      <div className="hidden shrink-0 border-b border-slate-200 bg-surface-50 px-6 py-2.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 sm:grid sm:grid-cols-[2.5rem_minmax(0,1fr)_9rem_5rem_7rem_7rem_2.5rem] sm:items-center sm:gap-3">
         <span>No.</span>
         <span>Description</span>
         <span>Partner</span>
@@ -178,7 +178,7 @@ export function LineItemsCard({
 
               <div>
                 <span className="label sm:sr-only">Amount</span>
-                <div className="flex min-h-11 items-center justify-end rounded-xl bg-slate-50 px-3 text-sm font-semibold tabular-nums text-slate-900 sm:bg-transparent sm:px-0">
+                <div className="flex min-h-10 items-center justify-end rounded-lg bg-surface-50 px-3 text-sm font-semibold tabular-nums text-slate-900 sm:bg-transparent sm:px-0">
                   {formatMoney(lineTotals[index] ?? 0)}
                 </div>
               </div>
@@ -204,7 +204,7 @@ export function LineItemsCard({
         </div>
       ) : null}
 
-      <div className="mt-auto flex shrink-0 flex-col gap-3 border-t border-slate-200 bg-slate-50/70 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div className="mt-auto flex shrink-0 flex-col gap-3 border-t border-slate-200 bg-surface-50 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <p className="text-xs text-slate-500">
           Recalculated on the server when you save. Quantities start at 1.
         </p>

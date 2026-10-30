@@ -25,6 +25,16 @@ export function WaveIcon(props: IconProps) {
   );
 }
 
+export function LedgerIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15.5H6.5A2.5 2.5 0 0 0 4 21V5.5Z" />
+      <path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H19" />
+      <path d="M8 7.5h7M8 10.5h5" />
+    </svg>
+  );
+}
+
 export function GridIcon(props: IconProps) {
   return (
     <svg {...base(props)}>

@@ -1,6 +1,6 @@
-# Surf Daily Sales
+# Darwaesh Khata
 
-A private daily sales memo app for a surf shop. Staff record sales against partners, add free-text
+A private daily sales ledger. Staff record sales against partners, add free-text
 line items, optionally attach a customer name and phone, and let the database compute every total.
 Owners review daily, weekly, monthly, and custom-range performance and can find any memo by customer
 name or phone number.

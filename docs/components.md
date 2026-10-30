@@ -51,7 +51,7 @@ src/components/
 
 | Component | Import | Use for |
 | --- | --- | --- |
-| `Button` | `@/components/ui/button` | Any non-submit button. Variants: primary, secondary, coral, danger, ghost. |
+| `Button` | `@/components/ui/button` | Any non-submit button. Variants: primary, secondary, accent, danger, ghost. |
 | `ButtonLink` | `@/components/ui/button` | Navigation actions styled as buttons. |
 | `buttonStyles` | `@/components/ui/button` | Styling non-interactive elements that must match a button (for example disabled pagination). |
 | `IconButton` | `@/components/ui/icon-button` | Icon-only actions with a required accessible `label`. |

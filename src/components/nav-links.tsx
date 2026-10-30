@@ -54,16 +54,18 @@ function isActive(pathname: string, href: string): boolean {
 export function NavLinks({
   role,
   variant,
+  collapsed = false,
 }: {
   role: UserRole;
   variant: "desktop" | "mobile";
+  collapsed?: boolean;
 }) {
   const pathname = usePathname();
   const items = navItemsForRole(role);
 
   if (variant === "mobile") {
     return (
-      <ul className="flex flex-wrap gap-1.5 pb-1">
+      <ul className="-mx-4 flex gap-1.5 overflow-x-auto px-4 pb-1 [scrollbar-width:none]">
         {items.map((item) => {
           const active = isActive(pathname, item.href);
           return (
@@ -73,8 +75,8 @@ export function NavLinks({
                 aria-current={active ? "page" : undefined}
                 className={`inline-flex min-h-9 items-center gap-1.5 rounded-full px-3 text-xs font-semibold transition ${
                   active
-                    ? "bg-ocean-700 text-white"
-                    : "bg-white text-slate-600 ring-1 ring-slate-200 hover:text-ocean-700"
+                    ? "bg-brand-700 text-white"
+                    : "bg-white text-slate-600 ring-1 ring-slate-200 hover:text-brand-700"
                 }`}
               >
                 <item.icon className="size-3.5" />
@@ -96,16 +98,19 @@ export function NavLinks({
             <Link
               href={item.href}
               aria-current={active ? "page" : undefined}
-              className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition ${
+              title={collapsed ? item.label : undefined}
+              className={`flex items-center gap-3 rounded-lg text-sm font-medium transition ${
+                collapsed ? "justify-center px-0 py-2.5" : "px-3 py-2.5"
+              } ${
                 active
-                  ? "bg-ocean-50 text-ocean-800"
-                  : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                  ? "bg-brand-700 text-white shadow-sm"
+                  : "text-slate-600 hover:bg-surface-100 hover:text-slate-900"
               }`}
             >
               <item.icon
-                className={`size-4 ${active ? "text-ocean-700" : "text-slate-400"}`}
+                className={`size-4 shrink-0 ${active ? "text-white" : "text-slate-400"}`}
               />
-              {item.label}
+              <span className={collapsed ? "sr-only" : undefined}>{item.label}</span>
             </Link>
           </li>
         );

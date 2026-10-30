@@ -157,7 +157,7 @@ export default async function ReportsPage({ searchParams }: ReportsPageProps) {
               href={quickRangeHref(period.value)}
               className={`rounded-full px-2.5 py-1 text-xs font-semibold transition ${
                 query.period === period.value
-                  ? "bg-ocean-700 text-white"
+                  ? "bg-brand-700 text-white"
                   : "bg-slate-100 text-slate-600 hover:bg-slate-200"
               }`}
             >
@@ -257,7 +257,7 @@ export default async function ReportsPage({ searchParams }: ReportsPageProps) {
                             <div className="flex items-center gap-2">
                               <div className="h-1.5 w-20 overflow-hidden rounded-full bg-slate-100">
                                 <div
-                                  className="h-full rounded-full bg-ocean-500"
+                                  className="h-full rounded-full bg-brand-500"
                                   style={{ width: `${Math.max(Math.min(share, 100), 0)}%` }}
                                 />
                               </div>
@@ -331,7 +331,7 @@ export default async function ReportsPage({ searchParams }: ReportsPageProps) {
                     </TableCell>
                     <TableCell
                       align="right"
-                      className="text-sm font-semibold tabular-nums text-ocean-800"
+                      className="text-sm font-semibold tabular-nums text-brand-800"
                     >
                       {formatMoney(totalSales)}
                     </TableCell>

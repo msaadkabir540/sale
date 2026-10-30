@@ -146,7 +146,7 @@ export function MemoForm({
           onUpdate={updateItem}
         />
 
-        <div className="sticky bottom-0 z-20 -mx-4 flex shrink-0 flex-col-reverse gap-2 border-t border-slate-200 bg-sand-50/95 px-4 py-2 backdrop-blur sm:-mx-6 sm:flex-row sm:justify-end sm:px-6 lg:static lg:z-auto lg:mx-0 lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
+        <div className="sticky bottom-0 z-20 -mx-4 flex shrink-0 flex-col-reverse gap-2 border-t border-slate-200 bg-surface-50/95 px-4 py-2 backdrop-blur sm:-mx-6 sm:flex-row sm:justify-end sm:px-6 lg:static lg:z-auto lg:mx-0 lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
           {showNavigation ? (
             <ButtonLink href={cancelHref} variant="secondary">
               Cancel

@@ -1,6 +1,6 @@
 # Technology Stack
 
-Surf Daily Sales Memo — technical baseline, dependency policy, and the decisions that shape the
+Darwaesh Khata — technical baseline, dependency policy, and the decisions that shape the
 implementation. This document is the source of truth for versions; `package.json` and the lockfile
 must match it.
 

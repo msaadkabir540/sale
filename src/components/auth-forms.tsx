@@ -25,7 +25,7 @@ export function SignInForm({
 
   return (
     <div className="card p-6 sm:p-8">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ocean-600">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
         Welcome back
       </p>
       <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900">Sign in</h1>
@@ -48,7 +48,7 @@ export function SignInForm({
             name="email"
             type="email"
             autoComplete="email"
-            placeholder="you@surfshop.com"
+            placeholder="you@example.com"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             required
@@ -74,7 +74,7 @@ export function SignInForm({
 
       <p className="mt-6 text-center text-sm text-slate-500">
         Need an account?{" "}
-        <Link href="/register" className="font-semibold text-ocean-700 hover:text-ocean-800">
+        <Link href="/register" className="font-semibold text-brand-700 hover:text-brand-800">
           Create one
         </Link>
       </p>
@@ -107,7 +107,7 @@ export function SignUpForm() {
 
   return (
     <div className="card p-6 sm:p-8">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ocean-600">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
         Join the crew
       </p>
       <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900">
@@ -143,7 +143,7 @@ export function SignUpForm() {
             name="email"
             type="email"
             autoComplete="email"
-            placeholder="you@surfshop.com"
+            placeholder="you@example.com"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             required
@@ -175,7 +175,7 @@ export function SignUpForm() {
 
       <p className="mt-6 text-center text-sm text-slate-500">
         Already have an account?{" "}
-        <Link href="/login" className="font-semibold text-ocean-700 hover:text-ocean-800">
+        <Link href="/login" className="font-semibold text-brand-700 hover:text-brand-800">
           Sign in
         </Link>
       </p>
