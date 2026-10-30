@@ -268,7 +268,7 @@ database. Every path is independently guarded.
 
 ## 8. UI composition
 
-- **Design tokens** in `globals.css` (`@theme`): surf-inspired ocean palette, sand neutrals, one
+- **Design tokens** in `globals.css` (`@theme`): single teal accent, neutral surfaces, one
   accent. Components use tokens, not arbitrary colors.
 - **Primitives**: `.card`, `.btn`, `.input`, `.label`, `.badge`, `.table` classes defined once with
   `@apply`; page markup stays readable. Application code consumes the React primitives in

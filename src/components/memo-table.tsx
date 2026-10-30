@@ -23,7 +23,7 @@ export function MemoTable({ rows }: { rows: SalesMemoListRow[] }) {
           <li key={row.id}>
             <Link
               href={`/memos/${row.id}`}
-              className="group grid gap-3 px-5 py-4 transition hover:bg-slate-50/70 sm:grid-cols-[8rem_minmax(0,1fr)_10rem_7.5rem] sm:items-center sm:gap-4"
+              className="group grid gap-3 px-5 py-4 transition hover:bg-surface-50 sm:grid-cols-[8rem_minmax(0,1fr)_10rem_7.5rem] sm:items-center sm:gap-4"
             >
               <div>
                 <p className="text-sm font-semibold text-slate-900">{formatDate(row.sale_date)}</p>
@@ -55,7 +55,7 @@ export function MemoTable({ rows }: { rows: SalesMemoListRow[] }) {
                 <span className="text-sm font-semibold tabular-nums text-slate-900">
                   {formatMoney(row.grand_total)}
                 </span>
-                <ChevronRightIcon className="size-4 shrink-0 text-slate-300 group-hover:text-ocean-600" />
+                <ChevronRightIcon className="size-4 shrink-0 text-slate-300 group-hover:text-brand-600" />
               </div>
             </Link>
           </li>

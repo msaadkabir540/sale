@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 import { signOutAction } from "@/app/(auth)/actions";
 import { Brand } from "@/components/brand";
@@ -23,6 +24,10 @@ function initials(name: string): string {
 
 export function AppShell({ profile, children }: { profile: Profile; children: React.ReactNode }) {
   const pathname = usePathname();
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleSidebar = () => setCollapsed((current) => !current);
+
   const isSaleEditor =
     pathname === "/memos/new" || /^\/memos\/[^/]+\/edit$/.test(pathname);
 
@@ -35,47 +40,86 @@ export function AppShell({ profile, children }: { profile: Profile; children: Re
   }
 
   return (
-    <div className="min-h-dvh md:grid md:grid-cols-[17rem_minmax(0,1fr)]">
-      <aside className="sticky top-0 hidden h-dvh flex-col border-r border-slate-200 bg-white/80 px-4 py-6 backdrop-blur md:flex">
-        <Brand />
+    <div
+      className={`min-h-dvh md:grid transition-[grid-template-columns] duration-200 ${
+        collapsed
+          ? "md:grid-cols-[4.75rem_minmax(0,1fr)]"
+          : "md:grid-cols-[16rem_minmax(0,1fr)]"
+      }`}
+    >
+      <aside
+        className={`sticky top-0 hidden h-dvh flex-col border-r border-slate-200 bg-white py-6 md:flex ${
+          collapsed ? "px-2" : "px-4"
+        }`}
+      >
+        <div className={collapsed ? "flex justify-center" : undefined}>
+          <Brand onToggle={toggleSidebar} collapsed={collapsed} />
+        </div>
 
-        <nav className="mt-8 flex-1" aria-label="Main navigation">
-          <NavLinks role={profile.role} variant="desktop" />
+        <nav
+          id="sidebar-nav"
+          className={`${collapsed ? "mt-6" : "mt-8"} flex-1`}
+          aria-label="Main navigation"
+        >
+          <NavLinks role={profile.role} variant="desktop" collapsed={collapsed} />
         </nav>
 
-        <div className="rounded-2xl border border-slate-200 bg-sand-50 p-3">
-          <div className="flex items-center gap-3">
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ocean-100 text-xs font-bold text-ocean-800">
+        {collapsed ? (
+          <div className="flex flex-col items-center gap-2 rounded-xl border border-slate-200 bg-surface-50 p-2">
+            <span
+              title={profile.full_name}
+              className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-800"
+            >
               {initials(profile.full_name)}
             </span>
-            <div className="min-w-0">
-              <p className="truncate text-sm font-semibold text-slate-900">{profile.full_name}</p>
-              <div className="mt-1">
-                <RoleBadge role={profile.role} />
+            <form action={signOutAction}>
+              <Button
+                type="submit"
+                variant="ghost"
+                size="sm"
+                aria-label="Sign out"
+              >
+                <LogOutIcon className="size-4" />
+              </Button>
+            </form>
+          </div>
+        ) : (
+          <div className="rounded-xl border border-slate-200 bg-surface-50 p-3">
+            <div className="flex items-center gap-3">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-800">
+                {initials(profile.full_name)}
+              </span>
+              <div className="min-w-0">
+                <p className="truncate text-sm font-semibold text-slate-900">
+                  {profile.full_name}
+                </p>
+                <div className="mt-1">
+                  <RoleBadge role={profile.role} />
+                </div>
               </div>
             </div>
-          </div>
 
-          <form action={signOutAction} className="mt-3">
-            <Button
-              type="submit"
-              variant="ghost"
-              size="sm"
-              className="w-full justify-start"
-            >
-              <LogOutIcon className="size-4" />
-              Sign out
-            </Button>
-          </form>
-        </div>
+            <form action={signOutAction} className="mt-3">
+              <Button
+                type="submit"
+                variant="ghost"
+                size="sm"
+                className="w-full justify-start"
+              >
+                <LogOutIcon className="size-4" />
+                Sign out
+              </Button>
+            </form>
+          </div>
+        )}
       </aside>
 
       <div className="flex min-w-0 flex-col">
-        <header className="sticky top-0 z-20 border-b border-slate-200 bg-sand-50/95 px-4 pt-3 backdrop-blur md:hidden">
+        <header className="sticky top-0 z-20 border-b border-slate-200 bg-surface-50/95 px-4 pt-3 backdrop-blur md:hidden">
           <div className="flex items-center justify-between gap-3">
             <Brand />
             <div className="flex items-center gap-2">
-              <span className="flex size-8 items-center justify-center rounded-full bg-ocean-100 text-[11px] font-bold text-ocean-800">
+              <span className="flex size-8 items-center justify-center rounded-full bg-brand-100 text-[11px] font-bold text-brand-800">
                 {initials(profile.full_name)}
               </span>
               <form action={signOutAction}>

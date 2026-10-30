@@ -54,7 +54,7 @@ function ExpenseModal({
     >
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-ocean-600">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-600">
             Expense
           </p>
           <h2

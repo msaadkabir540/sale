@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 export type ButtonVariant =
   | "primary"
   | "secondary"
-  | "coral"
+  | "accent"
   | "danger"
   | "ghost";
 
@@ -14,7 +14,7 @@ export type ButtonSize = "md" | "sm";
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   primary: "btn-primary",
   secondary: "btn-secondary",
-  coral: "btn-coral",
+  accent: "btn-accent",
   danger: "btn-danger",
   ghost: "btn-ghost",
 };

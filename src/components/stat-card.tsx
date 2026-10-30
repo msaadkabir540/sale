@@ -11,15 +11,17 @@ export function StatCard({
 }) {
   return (
     <div className="card p-5">
-      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</p>
+      <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-slate-500">
+        {label}
+      </p>
       <p
-        className={`mt-2 text-2xl font-semibold tracking-tight tabular-nums ${
-          tone === "accent" ? "text-ocean-700" : "text-slate-900"
+        className={`mt-2 text-[1.75rem] font-semibold leading-none tracking-tight tabular-nums ${
+          tone === "accent" ? "text-brand-700" : "text-slate-900"
         }`}
       >
         {value}
       </p>
-      {hint ? <p className="mt-1 text-xs text-slate-500">{hint}</p> : null}
+      {hint ? <p className="mt-2 text-xs text-slate-500">{hint}</p> : null}
     </div>
   );
 }

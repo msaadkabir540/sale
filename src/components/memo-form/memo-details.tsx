@@ -62,7 +62,7 @@ export function MemoDetails({
         <Field
           label={
             <>
-              Date <span className="text-coral-600">*</span>
+              Date <span className="text-accent-600">*</span>
               <span className="font-normal text-slate-400"> · defaults to today</span>
             </>
           }

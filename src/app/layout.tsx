@@ -4,11 +4,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Surf Daily Sales",
-    template: "%s · Surf Daily Sales",
+    default: "Darwaesh Khata",
+    template: "%s · Darwaesh Khata",
   },
   description:
-    "Record daily surf shop sales against partners, track line items, and review performance.",
+    "Record daily sales against partners, track line items, and review performance in Darwaesh Khata.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

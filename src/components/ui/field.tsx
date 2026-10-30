@@ -53,7 +53,7 @@ export function Field({
     <div className={className}>
       <Label htmlFor={htmlFor}>
         {label}
-        {required ? <span className="text-coral-600"> *</span> : null}
+        {required ? <span className="text-accent-600"> *</span> : null}
         {optional ? (
           <span className="font-normal text-slate-400"> (optional)</span>
         ) : null}

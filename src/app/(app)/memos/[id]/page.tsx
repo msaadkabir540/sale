@@ -216,7 +216,7 @@ export default async function MemoDetailPage({ params, searchParams }: MemoDetai
               </TableCell>
               <TableCell
                 align="right"
-                className="text-base font-semibold tabular-nums text-ocean-800"
+                className="text-base font-semibold tabular-nums text-brand-800"
               >
                 {formatMoney(memo.grand_total)}
               </TableCell>

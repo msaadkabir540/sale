@@ -66,7 +66,7 @@ export default async function PartnersPage({ searchParams }: PartnersPageProps) 
               id="partner-name"
               name="name"
               maxLength={120}
-              placeholder="Sunset Surf Co"
+              placeholder="City Traders"
               autoComplete="off"
               required
             />
@@ -131,7 +131,7 @@ export default async function PartnersPage({ searchParams }: PartnersPageProps) 
                 </div>
 
                 <details className="mt-3">
-                  <summary className="w-fit cursor-pointer text-xs font-semibold text-ocean-700 hover:text-ocean-800">
+                  <summary className="w-fit cursor-pointer text-xs font-semibold text-brand-700 hover:text-brand-800">
                     Edit name
                   </summary>
                   <form

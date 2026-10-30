@@ -132,7 +132,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
             </div>
             <Link
               href="/memos"
-              className="inline-flex items-center gap-1 text-sm font-semibold text-ocean-700 hover:text-ocean-800"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
             >
               View all
               <ChevronRightIcon className="size-3.5" />
@@ -167,7 +167,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
               </div>
               <Link
                 href="/reports?period=month"
-                className="text-sm font-semibold text-ocean-700 hover:text-ocean-800"
+                className="text-sm font-semibold text-brand-700 hover:text-brand-800"
               >
                 Reports
               </Link>
@@ -194,7 +194,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
                         <div className="mt-1.5 flex items-center gap-2">
                           <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-slate-100">
                             <div
-                              className="h-full rounded-full bg-ocean-500"
+                              className="h-full rounded-full bg-brand-500"
                               style={{ width: `${Math.max(Math.min(share, 100), 0)}%` }}
                             />
                           </div>
@@ -211,7 +211,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
               {monthPartners.length > 5 ? (
                 <Link
                   href="/reports?period=month"
-                  className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-ocean-700"
+                  className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-700"
                 >
                   View {monthPartners.length - 5} more
                   <ChevronRightIcon className="size-3" />
